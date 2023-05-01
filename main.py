@@ -1,11 +1,11 @@
-import cv2 
+import cv2
 import os
-import numpy
+# import numpy
 
-image_path = r'/Users/arunabhadutta/Desktop/Project CSE/data'
+image_path = r'/home/tamaroy/Documents/Drone_Stuff/images'
 os.chdir(image_path)
 cam=cv2.VideoCapture(0)
-detector=cv2.CascadeClassifier('/Users/arunabhadutta/Desktop/Project CSE/haarcascade_frontalface_default.xml')
+detector=cv2.CascadeClassifier('/home/tamaroy/Documents/Drone_Stuff/haarcascade_frontalface_default.xml')
 Id = int(input("enter your id: "))
 sampleNum = 0
 while(True):
