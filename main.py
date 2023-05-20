@@ -29,3 +29,5 @@ for filename in os.listdir(image_path):
 
 
 cv2.destroyAllWindows()
+
+# tama code
