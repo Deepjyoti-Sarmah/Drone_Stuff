@@ -29,8 +29,5 @@ for filename in os.listdir(image_path):
         break
 
 
-
-cv2.destroyAllWindows()
-
 # tama code
 cv2.destroyAllWindows()
