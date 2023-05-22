@@ -1,11 +1,9 @@
 import cv2
 import os
 import numpy as np
-from skimage import color
 from skimage.feature import hog
 from sklearn import svm
 from sklearn.metrics import accuracy_score, classification_report
-import matplotlib.pyplot as plt
 
 # Set the path to the input image folder
 image_folder = '/home/deepjyotisarmah/Documents/Drone_stuffs/input_images'
@@ -33,23 +31,19 @@ for filename in os.listdir(image_folder):
         # Process each detected face
         for (x, y, w, h) in faces:
             # Crop the face region
-            face_img = gray[y:y+h, x:x+w]
+            face_img = img[y:y+h, x:x+w]
 
-            # Convert the face image to grayscale
-            face_gray = color.rgb2gray(face_img)
+            # Resize the face image to a fixed size (e.g., 80x80)
+            resized_face = cv2.resize(face_img, (80, 80))
 
-            # Extract HOG features from the face image
-            fd, hog_image = hog(face_gray, orientations=8, pixels_per_cell=(16, 16),
-                                cells_per_block=(4, 4), block_norm='L2', visualize=True)
+            # Compute HOG features for each color channel
+            hog_feats = []
+            for channel in range(resized_face.shape[2]):
+                hog_feats.append(hog(resized_face[:, :, channel], orientations=8, pixels_per_cell=(16, 16), cells_per_block=(4, 4),block_norm='L2', visualize=False))
 
-            # Append the HOG features and label to the lists
-            hog_features.append(fd)
+            # Concatenate the HOG features from all color channels
+            hog_features.append(np.hstack(hog_feats))
             labels.append(filename)
-
-            # Save the detected face image to the output folder
-            output_folder = '/path/to/output/images'  # Set the path to the output image folder
-            output_path = os.path.join(output_folder, f'detected_{filename}')
-            cv2.imwrite(output_path, face_img)
 
 # Convert the lists to arrays
 hog_features = np.array(hog_features)
