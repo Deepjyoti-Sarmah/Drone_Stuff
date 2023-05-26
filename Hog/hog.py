@@ -166,9 +166,9 @@ for folder in os.listdir(input_folder_path):
     if os.path.isdir(os.path.join(input_folder_path, folder)):
         subfolders.append(folder)
 
-# Limit the dataset size to 1000 photos
-sample_size = 1000
-if len(subfolders) * sample_size < 1000:
+# Limit the dataset size to 500 photos
+sample_size = 100
+if len(subfolders) * sample_size < sample_size:
     sample_size = len(subfolders) * sample_size
 
 # Get the list of training subfolders
@@ -189,10 +189,13 @@ for subfolder in training_subfolders:
 hog = cv2.HOGDescriptor()
 hog_features = []
 for image in training_images:
-    hog_features.append(hog.compute(image))
+    hog_features.append(hog.compute(image).reshape(-1))
+
+# Limit the number of samples in hog_features to match the sample size
+hog_features = hog_features[:sample_size]
 
 # Split the dataset into training and testing sets
-train_features, test_features, train_labels, test_labels = train_test_split(hog_features, training_subfolders, test_size=0.4, random_state=42)
+train_features, test_features, train_labels, test_labels = train_test_split(hog_features, training_subfolders, test_size=0.2, random_state=42)
 
 # Train the classifier
 clf = SVC()
