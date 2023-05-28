@@ -57,11 +57,11 @@ for subdir in os.listdir(image_folder):
                 labels.append(subdir)  # Use the subfolder name as the label
 
                 # Break the loop if the maximum number of images is reached
-                if len(hog_features) >= 1000:
+                if len(hog_features) >= 3000:
                     break
 
         # Break the loop if the maximum number of images is reached
-        if len(hog_features) >= 1000:
+        if len(hog_features) >= 3000:
             break
 
 # Convert the lists to arrays
