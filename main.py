@@ -168,7 +168,7 @@ import cv2
 import os
 
 # Path to the input images folder
-input_folder = r'/home/deepjyotisarmah/Documents/Drone_stuffs/data_set'
+input_folder = r'/home/deepjyotisarmah/Documents/Drone_stuffs/lfw'
 
 # Path to the output images folder
 output_folder = r'/home/deepjyotisarmah/Documents/Drone_stuffs/output_images'
