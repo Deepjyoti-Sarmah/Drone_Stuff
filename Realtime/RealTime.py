@@ -89,9 +89,3 @@ while cap.read():
 cap.release()
 
 cv.destroyAllWindows
-
-        
-
-    
-
-     
