@@ -1,25 +1,16 @@
 import tensorflow as tf
-
 import pickle 
-
 from keras_facenet import FaceNet
-
 import cv2 as cv
-
 import numpy as np
-
 import os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
 from sklearn.preprocessing import LabelEncoder 
 
 
-
 facenet = FaceNet()
-
 faces_embeddings = np.load(r"/home/deepjyotisarmah/Documents/Drone_stuffs/MTCNN/faces_embeddings_1.npz")
-
 
 
 Y = faces_embeddings['arr_1']
@@ -81,11 +72,7 @@ while cap.read():
     cv.imshow("Face Recognition :", frame)
 
     if cv.waitKey(1) & ord ('q') == 27:
-
         break
 
-
-
 cap.release()
-
 cv.destroyAllWindows
