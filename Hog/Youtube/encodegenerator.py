@@ -15,11 +15,11 @@ firebase_admin.initialize_app(cred, {
 
 
 # Importing student images
-folderPath = '1_Hog_output_images_noBW'
+folderPath = 'images_2'
 pathList = os.listdir(folderPath)
 print(pathList)
 imgList = []
-studentIds = [] 
+studentIds = []
 for path in pathList:
     imgList.append(cv2.imread(os.path.join(folderPath, path)))
     studentIds.append(os.path.splitext(path)[0])
