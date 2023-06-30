@@ -4,18 +4,19 @@ import numpy as np
 import cv2
 import face_recognition
 import cvzone
-# import firebase_admin
-# from firebase_admin import credentials
-# from firebase_admin import db
-# from firebase_admin import storage
 import numpy as np
-# from datetime import datetime
 
-# cred = credentials.Certificate("serviceAccountKey.json")
-# firebase_admin.initialize_app(cred, {
-#     'databaseURL': "",
-#     'storageBucket': ""
-# })
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+from firebase_admin import  storage
+
+cred = credentials.Certificate("serviceAccountKey.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': "https://face-recognition-june-2023-default-rtdb.firebaseio.com/",
+    'storageBucket': "face-recognition-june-2023.appspot.com"
+})
+
 
 # bucket = storage.bucket()
 
@@ -23,15 +24,15 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
-# imgBackground = cv2.imread('Resources/background.png')
+imgBackground = cv2.imread('Resources/background.png')
 
-# # Importing the mode images into a list
-# folderModePath = 'Resources/Modes'
-# modePathList = os.listdir(folderModePath)
-# imgModeList = []
-# for path in modePathList:
-#     imgModeList.append(cv2.imread(os.path.join(folderModePath, path)))
-# # print(len(imgModeList))
+# Importing the mode images into a list
+folderModePath = 'Resources/Modes'
+modePathList = os.listdir(folderModePath)
+imgModeList = []
+for path in modePathList:
+    imgModeList.append(cv2.imread(os.path.join(folderModePath, path)))
+# print(len(imgModeList))
 
 # Load the encoding file
 print("Loading Encode File ...")
@@ -56,8 +57,8 @@ while True:
     faceCurFrame = face_recognition.face_locations(imgS)
     encodeCurFrame = face_recognition.face_encodings(imgS, faceCurFrame)
 
-    # imgBackground[162:162 + 480, 55:55 + 640] = img
-    # imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
+#     imgBackground[162:162 + 480, 55:55 + 640] = img
+#     imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
 
     # if faceCurFrame:
     for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
@@ -148,5 +149,5 @@ while True:
     #     modeType = 0
     #     counter = 0
     cv2.imshow("Webcam", img) 
-    # cv2.imshow("Face Attendance", imgBackground)
+#     cv2.imshow("Face Attendance", imgBackground)
     cv2.waitKey(1)
