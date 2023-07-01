@@ -12,20 +12,24 @@ ref = db.reference('Students')
 data = {
     "01":
         {
-            "name": "Linus Torvald"
+            "name": "Linus Torvald",
+            "detection_no": 0
 
         },
     "02":
         {
-            "name": "Ana De Armas"
+            "name": "Ana De Armas",
+            "detection_no": 0
         },
     "03":
         {
-            "name": "Elon Musk"
+            "name": "Elon Musk",
+            "detection_no": 0
         },
     "04":
         {
-            "name": "Emily Blunt"
+            "name": "Emily Blunt",
+            "detection_no": 0
         }
 }
 

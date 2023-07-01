@@ -9,7 +9,7 @@ import numpy as np
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from firebase_admin import  storage
+from firebase_admin import storage
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
@@ -43,9 +43,9 @@ encodeListKnown, studentIds = encodeListKnownWithIds
 # print(studentIds)
 print("Encode File Loaded")
 
-# modeType = 0
-# counter = 0
-# id = -1
+modeType = 0
+counter = 0
+id = -1
 # imgStudent = []
 
 while True:
@@ -57,40 +57,40 @@ while True:
     faceCurFrame = face_recognition.face_locations(imgS)
     encodeCurFrame = face_recognition.face_encodings(imgS, faceCurFrame)
 
-#     imgBackground[162:162 + 480, 55:55 + 640] = img
-#     imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
+    # imgBackground[162:162 + 480, 55:55 + 640] = img
+    # imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
 
     # if faceCurFrame:
     for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
-            matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
-            faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
-            print("matches", matches)
-            print("faceDis", faceDis)
+        matches = face_recognition.compare_faces(encodeListKnown, encodeFace)
+        faceDis = face_recognition.face_distance(encodeListKnown, encodeFace)
+        print("matches", matches)
+        print("faceDis", faceDis)
 
-            matchIndex = np.argmin(faceDis)
-            print("Match Index", matchIndex)
+        matchIndex = np.argmin(faceDis)
+        print("Match Index", matchIndex)
 
-            # if matches[matchIndex]:
-    #             # print("Known Face Detected")
-    #             # print(studentIds[matchIndex])
-    #             y1, x2, y2, x1 = faceLoc
-    #             y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
-    #             bbox = 55 + x1, 162 + y1, x2 - x1, y2 - y1
-    #             imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0)
-    #             id = studentIds[matchIndex]
-    #             if counter == 0:
-    #                 cvzone.putTextRect(imgBackground, "Loading", (275, 400))
-    #                 cv2.imshow("Face Attendance", imgBackground)
-    #                 cv2.waitKey(1)
-    #                 counter = 1
+        if matches[matchIndex]:
+            print("Known Face Detected")
+            print(studentIds[matchIndex])
+            # y1, x2, y2, x1 = faceLoc
+            # y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
+            # bbox = 55 + x1, 162 + y1, x2 - x1, y2 - y1
+            # imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0)
+            id = studentIds[matchIndex]
+            if counter == 0:
+                #                 cvzone.putTextRect(imgBackground, "Loading", (275, 400))
+                #                 cv2.imshow("Face Attendance", imgBackground)
+                #                 cv2.waitKey(1)
+                counter = 1
     #                 modeType = 1
 
-    #     if counter != 0:
+        if counter != 0:
 
-    #         if counter == 1:
-    #             # Get the Data
-    #             studentInfo = db.reference(f'Students/{id}').get()
-    #             print(studentInfo)
+            if counter == 1:
+                #             # Get the Data
+                studentInfo = db.reference(f'Students/{id}').get()
+                print(studentInfo)
     #             # Get the Image from the storage
     #             blob = bucket.get_blob(f'Images/{id}.png')
     #             array = np.frombuffer(blob.download_as_string(), np.uint8)
@@ -148,6 +148,6 @@ while True:
     # else:
     #     modeType = 0
     #     counter = 0
-    cv2.imshow("Webcam", img) 
-#     cv2.imshow("Face Attendance", imgBackground)
+    cv2.imshow("Webcam", img)
+    # cv2.imshow("Face Attendance", imgBackground)
     cv2.waitKey(1)
