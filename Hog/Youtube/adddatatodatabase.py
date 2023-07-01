@@ -10,35 +10,22 @@ firebase_admin.initialize_app(cred, {
 ref = db.reference('Students')
 
 data = {
-    "321654":
+    "01":
         {
-            "name": "Murtaza Hassan",
-            "major": "Robotics",
-            "starting_year": 2017,
-            "total_attendance": 7,
-            "standing": "G",
-            "year": 4,
-            "last_attendance_time": "2022-12-11 00:54:34"
+            "name": "Linus Torvald"
+
         },
-    "852741":
+    "02":
         {
-            "name": "Emly Blunt",
-            "major": "Economics",
-            "starting_year": 2021,
-            "total_attendance": 12,
-            "standing": "B",
-            "year": 1,
-            "last_attendance_time": "2022-12-11 00:54:34"
+            "name": "Ana De Armas"
         },
-    "963852":
+    "03":
         {
-            "name": "Elon Musk",
-            "major": "Physics",
-            "starting_year": 2020,
-            "total_attendance": 7,
-            "standing": "G",
-            "year": 2,
-            "last_attendance_time": "2022-12-11 00:54:34"
+            "name": "Elon Musk"
+        },
+    "04":
+        {
+            "name": "Emily Blunt"
         }
 }
 
