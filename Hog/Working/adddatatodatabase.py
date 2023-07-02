@@ -13,23 +13,23 @@ data = {
     "01":
         {
             "name": "HariOm Kr Modi",
-            "detection_no": 0
+            "detection_no": 1
 
         },
     "02":
         {
             "name": "Ranjeet_kumar_gupta",
-            "detection_no": 0
+            "detection_no": 2
         },
     "03":
         {
             "name": "Doni_Khungev_Basumatary",
-            "detection_no": 0
+            "detection_no": 3
         },
     "04":
         {
             "name": "Prince Raj Kumar",
-            "detection_no": 0
+            "detection_no": 1
         },
     "05":
         {
@@ -39,32 +39,32 @@ data = {
     "06":
         {
             "name": "Saif_Ali",
-            "detection_no": 0
+            "detection_no": 2
         },
     "07":
         {
             "name": "Rohit Kumar",
-            "detection_no": 0
+            "detection_no": 1
         },
     "08":
         {
             "name": "Pratynsh_J_Deka",
-            "detection_no": 0
+            "detection_no": 3
         },
     "09":
         {
             "name": "Saurabh_kumar",
-            "detection_no": 0
+            "detection_no": 4
         },
     "10":
         {
             "name": "Rahul Thakur",
-            "detection_no": 0
+            "detection_no": 2
         },
     "11":
         {
             "name": "Saksam Som",
-            "detection_no": 0
+            "detection_no": 1
         },
     "12":
         {
