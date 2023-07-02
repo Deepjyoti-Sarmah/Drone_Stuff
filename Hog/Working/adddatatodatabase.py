@@ -12,103 +12,103 @@ ref = db.reference('Students')
 data = {
     "01":
         {
-            "name": "Linus Torvald",
+            "name": "HariOm Kr Modi",
             "detection_no": 0
 
         },
     "02":
         {
-            "name": "Ana De Armas",
+            "name": "Ranjeet_kumar_gupta",
             "detection_no": 0
         },
     "03":
         {
-            "name": "Elon Musk",
+            "name": "Doni_Khungev_Basumatary",
             "detection_no": 0
         },
     "04":
         {
-            "name": "Emily Blunt",
+            "name": "Prince Raj Kumar",
             "detection_no": 0
         },
     "05":
         {
-            "name": "",
+            "name": "Mayuk_Bhattachargy",
             "detection_no": 0
         },
     "06":
         {
-            "name": "",
+            "name": "Saif_Ali",
             "detection_no": 0
         },
     "07":
         {
-            "name": "",
+            "name": "Rohit Kumar",
             "detection_no": 0
         },
     "08":
         {
-            "name": "",
+            "name": "Pratynsh_J_Deka",
             "detection_no": 0
         },
     "09":
         {
-            "name": "",
+            "name": "Saurabh_kumar",
             "detection_no": 0
         },
     "10":
         {
-            "name": "",
+            "name": "Rahul Thakur",
             "detection_no": 0
         },
     "11":
         {
-            "name": "",
+            "name": "Saksam Som",
             "detection_no": 0
         },
     "12":
         {
-            "name": "",
+            "name": "Rahul Kr Sharma",
             "detection_no": 0
         },
     "13":
         {
-            "name": "",
+            "name": "Vikrant Kumar",
             "detection_no": 0
         },
     "14":
         {
-            "name": "",
+            "name": "Santanu Ghose",
             "detection_no": 0
         },
     "15":
         {
-            "name": "",
+            "name": "Nabojyoti Nath",
             "detection_no": 0
         },
     "16":
         {
-            "name": "",
+            "name": "Ravi Raj",
             "detection_no": 0
         },
     "17":
         {
-            "name": "",
+            "name": "Anand Raj",
             "detection_no": 0
         },
     "18":
         {
-            "name": "",
+            "name": "Ramavtar Toshi",
             "detection_no": 0
         },
     "19":
         {
-            "name": "",
+            "name": "Rishav_Sheivastaur",
             "detection_no": 0
         },
     "20":
         {
-            "name": "",
+            "name": "Md Aziz",
             "detection_no": 0
         },
 
