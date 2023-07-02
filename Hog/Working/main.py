@@ -88,17 +88,17 @@ while True:
 
         if counter != 0:
 
-            if counter == 1:
-                #             # Get the Data
-                studentInfo = db.reference(f'Students/{id}').get()
-                print(studentInfo)
-                try:
-                    if studentInfo is not None:
-                        print(studentInfo)
-                    else:
-                        print(f"No data found for student with ID {id}")
-                except Exception as e:
-                    print(f"Error accessing the database: {str(e)}")
+            # if counter == 1:
+            #             # Get the Data
+            studentInfo = db.reference(f'Students/{id}').get()
+            # print(studentInfo)
+            try:
+                if studentInfo is not None:
+                    print(studentInfo)
+                else:
+                    print(f"No data found for student with ID {id}")
+            except Exception as e:
+                print(f"Error accessing the database: {str(e)}")
 
     #             # Get the Image from the storage
     #             blob = bucket.get_blob(f'Images/{id}.png')
@@ -109,10 +109,15 @@ while True:
     #             secondsElapsed = (datetime.now() - datetimeObject).total_seconds()
     #             print(secondsElapsed)
     #             if secondsElapsed > 30:
-                    ref = db.reference(f'Students/{id}')
-                    studentInfo['detection_no'] += 1
-                    ref.child('detection_no').set(
-                        studentInfo['detection_no'])
+                ref = db.reference(f'Students/{id}')
+                studentInfo['detection_no'] += 1
+                ref.child('detection_no').set(
+                    studentInfo['detection_no'])
+
+                data = ref.get()
+
+                print(data)
+                # ref.set({'detection_no': studentInfo['detection_no'] + 1})
     #                 ref.child('last_attendance_time').set(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     #             else:
     #                 modeType = 3
@@ -147,7 +152,7 @@ while True:
 
     #                 imgBackground[175:175 + 216, 909:909 + 216] = imgStudent
 
-                counter += 1
+            counter += 1
 
     #             if counter >= 20:
     #                 counter = 0
