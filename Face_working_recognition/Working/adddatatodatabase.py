@@ -39,7 +39,7 @@ data = {
     "06":
         {
             "name": "Saif_Ali",
-            "detection_no": 2
+            "detection_no": 3
         },
     "07":
         {
@@ -69,47 +69,47 @@ data = {
     "12":
         {
             "name": "Rahul Kr Sharma",
-            "detection_no": 0
+            "detection_no": 2
         },
     "13":
         {
             "name": "Vikrant Kumar",
-            "detection_no": 0
+            "detection_no": 2
         },
     "14":
         {
             "name": "Santanu Ghose",
-            "detection_no": 0
+            "detection_no": 1
         },
     "15":
         {
             "name": "Nabojyoti Nath",
-            "detection_no": 0
+            "detection_no": 2
         },
     "16":
         {
             "name": "Ravi Raj",
-            "detection_no": 0
+            "detection_no": 3
         },
     "17":
         {
             "name": "Anand Raj",
-            "detection_no": 0
+            "detection_no": 1
         },
     "18":
         {
             "name": "Ramavtar Toshi",
-            "detection_no": 0
+            "detection_no": 2
         },
     "19":
         {
             "name": "Rishav_Sheivastaur",
-            "detection_no": 0
+            "detection_no": 1
         },
     "20":
         {
             "name": "Md Aziz",
-            "detection_no": 0
+            "detection_no": 2
         },
 
 }
