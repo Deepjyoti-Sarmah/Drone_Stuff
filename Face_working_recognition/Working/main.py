@@ -86,38 +86,38 @@ while True:
 
             if counter != 0:
 
-                # if counter == 1:
+                if counter == 1:
 
-                studentInfo = db.reference(f'Students/{id}').get()
+                    studentInfo = db.reference(f'Students/{id}').get()
 
-                # name = studentInfo['name']
-                #             # Get the Data
-                # print(studentInfo)
-                try:
-                    if studentInfo is not None:
-                        print(studentInfo)
-                    else:
-                        print(f"No data found for student with ID {id}")
-                except Exception as e:
-                    print(f"Error accessing the database: {str(e)}")
-
-            #             # Get the Image from the storage
-            #             blob = bucket.get_blob(f'Images/{id}.png')
-            #             array = np.frombuffer(blob.download_as_string(), np.uint8)
-            #             imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
-            #             # Update data of attendance
-            #             datetimeObject = datetime.strptime(studentInfo['last_attendance_time'], "%Y-%m-%d %H:%M:%S")
-            #             secondsElapsed = (datetime.now() - datetimeObject).total_seconds()
-            #             print(secondsElapsed)
-            #             if secondsElapsed > 30:
-                    ref = db.reference(f'Students/{id}')
-                    studentInfo['detection_no'] += 1
+                    # name = studentInfo['name']
+                    #             # Get the Data
+                    # print(studentInfo)
                     try:
-                        ref.child('detection_no').set(
-                            studentInfo['detection_no'])
-                        print("Update successful")
+                        if studentInfo is not None:
+                            print(studentInfo)
+                        else:
+                            print(f"No data found for student with ID {id}")
                     except Exception as e:
-                        print("Update failed:", str(e))
+                        print(f"Error accessing the database: {str(e)}")
+
+                #             # Get the Image from the storage
+                #             blob = bucket.get_blob(f'Images/{id}.png')
+                #             array = np.frombuffer(blob.download_as_string(), np.uint8)
+                #             imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
+                #             # Update data of attendance
+                #             datetimeObject = datetime.strptime(studentInfo['last_attendance_time'], "%Y-%m-%d %H:%M:%S")
+                #             secondsElapsed = (datetime.now() - datetimeObject).total_seconds()
+                #             print(secondsElapsed)
+                #             if secondsElapsed > 30:
+                        ref = db.reference(f'Students/{id}')
+                        studentInfo['detection_no'] += 1
+                        try:
+                            ref.child('detection_no').set(
+                                studentInfo['detection_no'])
+                            print("Update successful")
+                        except Exception as e:
+                            print("Update failed:", str(e))
 
         #                 ref.child('last_attendance_time').set(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                 # else:
@@ -130,18 +130,18 @@ while True:
 
                 counter += 1
 
-                # if counter >= 20:
+                if counter >= 20:
 
-                #     # name = studentInfo['name']
+                    #     # name = studentInfo['name']
 
-                #     message = client.messages.create(
-                #         body="A face has been detected! The name of the person detected is {} and their ID is {}".format(
-                #             *studentInfo.values()),
-                #         from_='+15419858704',
-                #         to='+916003349334'
-                #     )
+                    message = client.messages.create(
+                        body="A face has been detected! The name of the person detected is {} and their ID is {}".format(
+                            *studentInfo.values()),
+                        from_='+15419858704',
+                        to='+916003349334'
+                    )
 
-                #     print(message.status)
+                    print(message.status)
 
                 # counter = 0
                 # studentInfo = []
